@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Foodie - ახალი ანგარიშის შექმნა" />
+    <title>Foodie - რეგისტრაცია</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav_container nav-left">
+          <a href="index.html" class="logo"><h1>Foodie</h1></a>
+          <div class="nav-links" id="nav-links">
+            <a href="index.html">მთავარი</a>
+            <a href="menu.html">მენიუ</a>
+          </div>
+        </div>
+        <div class="nav_container nav-right" id="nav-auth">
+          <a href="cart.html" class="cart-icon-wrapper">
+            <i class="fa-solid fa-cart-shopping cart-icon"></i>
+            <span class="cart-badge" id="cart-badge" class="hidden">0</span>
+          </a>
+          <a href="login.html" class="auth-link login">შესვლა</a>
+          <a href="signup.html" class="auth-link signup">რეგისტრაცია</a>
+          <div class="user-menu user-link" class="hidden">
+            <a
+              href="profile.html"
+              class="user-name"
+              id="user-name"
+              title="user"
+            ></a>
+            <span class="logout-btn" onclick="AuthAPI.logout()">გამოსვლა</span>
+          </div>
+          <button
+            title="button"
+            class="mobile-menu-btn"
+            id="mobile-menu-btn"
+            onclick="toggleMobileMenu()"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+          <a href="index.html" class="logo"><h1>Foodie</h1></a>
+          <button
+            title="button"
+            class="mobile-menu-close"
+            onclick="toggleMobileMenu()"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="index.html"><i class="fa-solid fa-house"></i> მთავარი</a>
+          <a href="menu.html"><i class="fa-solid fa-utensils"></i> მენიუ</a>
+          <a href="cart.html"
+            ><i class="fa-solid fa-cart-shopping"></i> კალათა</a
+          >
+          <div class="mobile-auth-links" id="mobile-auth-links">
+            <a href="login.html" class="auth-link"
+              ><i class="fa-solid fa-user"></i> შესვლა</a
+            >
+            <a href="signup.html" class="signup"
+              ><i class="fa-solid fa-user-plus"></i> რეგისტრაცია</a
+            >
+          </div>
+          <div class="mobile-user-menu user-link" class="hidden">
+            <span class="user-name" id="mobile-user-name"></span>
+            <span class="logout-btn" onclick="AuthAPI.logout()"
+              ><i class="fa-solid fa-right-from-bracket"></i> გამოსვლა</span
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="mobile-overlay"
+        id="mobile-overlay"
+        onclick="toggleMobileMenu()"
+      ></div>
+    </header>
+    <main>
+      <section class="auth-section">
+        <div class="auth-container">
+          <h2>
+            <i class="fa-solid fa-user-plus" class="text-primary"></i>
+            რეგისტრაცია
+          </h2>
+          <p class="subtitle">შექმენით ახალი ანგარიში</p>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="firstName">სახელი</label>
+              <input
+                type="text"
+                id="firstName"
+                placeholder="თქვენი სახელი"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lastName">გვარი</label>
+              <input
+                type="text"
+                id="lastName"
+                placeholder="თქვენი გვარი"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">ემაილი</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="თქვენი ემაილი"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">პაროლი</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="შექმენით პაროლი"
+                required
+                minlength="6"
+              />
+            </div>
+            <button type="submit" class="btn-primary">რეგისტრაცია</button>
+          </form>
+          <div class="auth-footer">
+            <p>უკვე გაქვთ ანგარიში? <a href="login.html">შესვლა</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="ftr">
+        <div class="ftr-container">
+          <h2 class="ftr-hd">Foodie</h2>
+          <p>გემრიელი საკვები თქვენს კართან</p>
+          <div class="social">
+            <a href="#" title="social"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" title="social"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" title="social"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
+        </div>
+        <div class="ftr-container">
+          <h2>კონტაქტი</h2>
+          <p>საკვების ქუჩა 123</p>
+          <p>თბილისი, საქართველო</p>
+          <p>ტელ: (555) 123-4567</p>
+          <p>ორშ-კვ: 10:00 - 22:00</p>
+        </div>
+        <div class="ftr-container">
+          <h2>სწრაფი ბმულები</h2>
+          <a href="menu.html">მენიუ</a>
+          <a href="#">ჩვენს შესახებ</a>
+          <a href="#">კონტაქტი</a>
+          <a href="#">წესები და პირობები</a>
+          <a href="#">კონფიდენციალურობა</a>
+        </div>
+        <div class="ftr-container">
+          <h2>სიახლეები</h2>
+          <p>გამოიწერეთ სპეციალური შეთავაზებებისთვის</p>
+          <div class="inpt">
+            <input type="email" placeholder="თქვენი ემაილი" />
+            <button type="submit">გამოწერა</button>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/1761e8cf2a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
